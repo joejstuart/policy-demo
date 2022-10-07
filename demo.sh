@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 REGISTRY=jstuart-registry
+REG_SERVER=jstuartregistry.azurecr.io
 
 # login to azure container registry
 registry_login() {
@@ -13,7 +14,7 @@ get_registry_server() {
 }
 
 conftest_push() {
-  conftest push "jstuartregistry.azurecr.io/${1}:latest" -p $1
+  conftest push "${REG_SERVER}/${1}:latest" -p $1
 }
 
 list_images() {
