@@ -1,0 +1,38 @@
+{
+  "_type": "https://in-toto.io/Statement/v0.1",
+  "predicateType": "https://slsa.dev/provenance/v0.2",
+  "subject": [
+    {
+      "name": "quay.io/hacbs-contract-demo/single-container-app",
+      "digest": {
+        "sha256": "84550a596e40024e6ea10ce5aab9ad5b0b91a14cb27161654722ab1d11c70ac2"
+      }
+    }
+  ],
+  "predicate": {
+    "builder": {
+      "id": "https://tekton.dev/chains/v2"
+    },
+    "buildType": "tekton.dev/v1beta1/TaskRun",
+    "invocation": {
+      "configSource": {},
+      "parameters": {
+        "BUILDER_IMAGE": "registry.access.redhat.com/ubi9/buildah:9.0.0-19@sha256:c8b1d312815452964885680fc5bc8d99b3bfe9b6961228c71a09c72ca8e915eb",
+        "BUILD_EXTRA_ARGS": "--authfile /workspace/source/.dockerconfigjson",
+        "CONTEXT": ".",
+        "DOCKERFILE": "Dockerfile",
+        "IMAGE": "quay.io/hacbs-contract-demo/single-container-app",
+        "MAVEN_MIRROR_URL": "http://localhost:2000/maven2",
+        "PUSH_EXTRA_ARGS": "--authfile /workspace/source/.dockerconfigjson",
+        "TLSVERIFY": "true"
+      }
+    },
+    "buildConfig": {
+      "steps": [
+        {
+          "entryPoint": "echo 'do work'"
+        }
+      ]
+    }
+  }
+}
