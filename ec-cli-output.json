@@ -1,0 +1,27 @@
+{
+  "success": false,
+  "components": [
+    {
+      "name": "single-container-app",
+      "containerImage": "quay.io/hacbs-contract-demo/single-container-app@sha256:84550a596e40024e6ea10ce5aab9ad5b0b91a14cb27161654722ab1d11c70ac2",
+      "violations": [
+        {
+          "msg": "Required task(s) '' not found in the PipelineRun attestation",
+          "metadata": {
+            "code": "tasks_required",
+            "effective_on": "2022-01-01T00:00:00Z"
+          }
+        }
+      ],
+      "warnings": [
+        {
+          "msg": "The following tests were skipped: sast-java-sec-check",
+          "metadata": {
+            "code": "test_result_skipped",
+            "effective_on": "2022-01-01T00:00:00Z"
+          }
+        }
+      ]
+    }
+  ]
+}
